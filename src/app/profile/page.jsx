@@ -3,8 +3,6 @@ import Layout from '@/components/user/Layout/Layout'
 import React from 'react'
 import Profile from './profile'
 
-
-
 const page = () => {
   return (
       <div>
