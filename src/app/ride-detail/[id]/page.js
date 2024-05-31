@@ -1,5 +1,5 @@
 "use client"
-import Layout from '@/components/User/Layout/Layout'
+import Layout from "../../../components/user/Layout/Layout.jsx"
 import { useRouter } from 'next/navigation'
 import React from 'react'
 import RideDetail from './RideDetail'
