@@ -1,6 +1,6 @@
 "use client"
 import { Avatar, Button } from '@mui/material'
-import React from 'react'
+import React, { useEffect } from 'react'
 import WestIcon from '@mui/icons-material/West'
 import { useRouter } from 'next/navigation'
 import { deepOrange } from '@mui/material/colors'
@@ -8,13 +8,21 @@ import RideCard from '@/components/user/RideCard/RideCard'
 import AccountBalanceWalletIcon from '@mui/icons-material/AccountBalanceWallet'
 import CallIcon from '@mui/icons-material/Call';
 import WifiIcon from '@mui/icons-material/Wifi';
+import { useDispatch, useSelector } from 'react-redux'
+import { getUser } from '@/redux/Auth/Action'
 
 const Profile = () => {
+  const dispatch = useDispatch()
+  const jwt = localStorage.getItem("jwt")
+  const {auth} = useSelector(state => state)
     const router = useRouter()
-    console.log(router)
     const goBack = () => {
         router.back()
-    }
+  }
+  useEffect(() => {
+    dispatch(getUser(jwt))
+  }, [])
+  console.log("profile auth-------",auth)
     return (
         <div className="px-2 lg:px-5 ">
   <div className=" px-2 lg:px-5 py-2">
@@ -24,8 +32,8 @@ const Profile = () => {
         <Avatar sx={{ bgcolor: deepOrange[500] }}>
           K 
         </Avatar>
-        <p>Ram</p>
-        <p>75620265451</p> 
+        <p>{auth.user?.fullName}</p>
+        <p>{auth.user?.mobile}</p> 
         </div>
 
         <div className='border rounded-sm mt-5'>

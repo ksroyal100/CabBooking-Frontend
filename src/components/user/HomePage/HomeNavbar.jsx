@@ -7,7 +7,7 @@ const HomeNavbar = () => {
     const router = useRouter()
   return (
       <nav className='bg-black py-4'>
-          <div className='container max-auto px-4'>
+          <div className='container w-full px-4'>
               <div className='flex justify-between items-center'>
                   <div className='flex items-center'>
                       <div className='flex items-center mx-5'>
@@ -34,11 +34,11 @@ const HomeNavbar = () => {
                       </div>
                   </div>
 
-                      <div >
+                      <div className=''>
                           <button onClick={()=> router.push("book-ride")} className='bg-gray-700 text-white hover:bg-gray-900 text-sm fzont-semibold px-4 py-3 '>Book an Ola Cab</button>
-                      <button className='bg-white text-black hover:bg-gray-300 text-sm font-semibold px-4 py-3 ml-5'>Free S1 Test Ride</button>
+                      <button onClick={()=> router.push("/register")}  className='bg-white text-black hover:bg-gray-300 text-sm font-semibold px-4 py-3 ml-5'>Create an Account</button>
                         
-                      <MenuIcon className='ml-5 text-white text-3xl' />
+                      {/* <MenuIcon className='ml-5 text-white text-3xl' /> */}
                       </div>
               </div>
           </div> 
