@@ -24,7 +24,7 @@ const Login = () => {
   const goBack = () => {
     router.back();
   };
-  const jwt = localStorage.getItem("jwt");
+  // const jwt = localStorage.getItem("jwt");
     const { auth } = useSelector((store) => store);
     
     const formik = useFormik({
@@ -50,12 +50,12 @@ const Login = () => {
     dispatch(login(signinData));
   };
 
-//   useEffect(() => {
-//     console.log("jwt --- ", jwt);
-//     if (jwt) {
-//       dispatch(getUser(jwt));
-//     }
-//   }, [jwt]);
+  // useEffect(() => {
+  //   console.log("jwt --- ", jwt);
+  //   if (jwt) {
+  //     dispatch(getUser(jwt));
+  //   }
+  // }, [jwt]);
 
   useEffect(() => {
     if (auth.user?.fullName || auth.user?.name) {
