@@ -1,10 +1,10 @@
-"use client";
+"use client"
 import React, { useEffect, useState } from "react";
 import {  TextField, Button } from "@mui/material";
 import WestIcon from "@mui/icons-material/West";
 import { useRouter } from "next/navigation";
 import { useDispatch, useSelector } from "react-redux";
-import { getUser, registerUser } from "@/redux/Auth/Action";
+// import { getUser, registerUser } from "@/redux/Auth/Action";
 import { useFormik } from "formik";
 import * as yup from "yup";
 // import { registerUser } from "@/redux/Auth/Action";
@@ -20,7 +20,7 @@ const Register = () => {
 
   const router = useRouter();
   const dispatch = useDispatch();
-  const jwt = localStorage.getItem("jwt");
+  // const jwt = localStorage.getItem("jwt");
   const { auth } = useSelector((store) => store);
 
   const [signupData, setSignupData] = useState({
@@ -51,12 +51,12 @@ const Register = () => {
     })
 
 
-  useEffect(() => {
-    console.log("jwt --- ",jwt)
-    if (jwt) {
-      dispatch(getUser(jwt));
-    }
-  }, [jwt]);
+  // useEffect(() => {
+  //   console.log("jwt --- ",jwt)
+  //   if (jwt) {
+  //     dispatch(getUser(jwt));
+  //   }
+  // }, [jwt]);
 
   useEffect(() => {
     if (auth.user?.fullName ||auth.user?.name) {

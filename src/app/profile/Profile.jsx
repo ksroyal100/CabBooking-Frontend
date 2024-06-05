@@ -9,19 +9,19 @@ import AccountBalanceWalletIcon from '@mui/icons-material/AccountBalanceWallet'
 import CallIcon from '@mui/icons-material/Call';
 import WifiIcon from '@mui/icons-material/Wifi';
 import { useDispatch, useSelector } from 'react-redux'
-import { getUser } from '@/redux/Auth/Action'
+// import { getUser } from '@/redux/Auth/Action'
 
 const Profile = () => {
   const dispatch = useDispatch()
-  const jwt = localStorage.getItem("jwt")
+  // const jwt = localStorage.getItem("jwt")
   const {auth} = useSelector(state => state)
     const router = useRouter()
     const goBack = () => {
         router.back()
   }
-  useEffect(() => {
-    dispatch(getUser(jwt))
-  }, [])
+  // useEffect(() => {
+  //   dispatch(getUser(jwt))
+  // }, [])
   console.log("profile auth-------",auth)
     return (
         <div className="px-2 lg:px-5 ">
@@ -32,8 +32,10 @@ const Profile = () => {
         <Avatar sx={{ bgcolor: deepOrange[500] }}>
           K 
         </Avatar>
-        <p>{auth.user?.fullName}</p>
-        <p>{auth.user?.mobile}</p> 
+        {/* <p>{auth.user?.fullName}</p>
+        <p>{auth.user?.mobile}</p>  */}
+        <p>Dhruv Rathi</p>
+        <p>8960501477</p> 
         </div>
 
         <div className='border rounded-sm mt-5'>
